@@ -14,15 +14,10 @@ export default function(options = {}) {
       keyword: binding?.value?.keyword ?? '',
       className: binding?.value?.className ?? ''
     }
-    const regExp = new RegExp(`${escapeRegExp(option.keyword)}`, option.mode)
-    const highlight = (keyword) => !keyword ? '' :`
-      <span
-        class="${option.className}"
-        style="color:${option.color}"
-      >
-        ${keyword}
-      </span>
-    `
+    const regExp = new RegExp(escapeRegExp(option.keyword), option.mode)
+    const highlight = (keyword) => `<span
+      ${option.className ? `class="${option.className}"` : ''}
+      style="color:${option.color}">${keyword}</span>`
 
     el.innerHTML = option.text.replace(regExp, highlight('$&'))
   }
