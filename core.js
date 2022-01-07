@@ -15,7 +15,7 @@ export default function(options = {}) {
       className: binding?.value?.className ?? ''
     }
     const regExp = new RegExp(`${escapeRegExp(option.keyword)}`, option.mode)
-    const highlight = (keyword) => `
+    const highlight = (keyword) => !keyword ? '' :`
       <span
         class="${option.className}"
         style="color:${option.color}"
