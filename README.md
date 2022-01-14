@@ -22,16 +22,26 @@ app.directive('highlight', HighlightText({
 }))
 ```
 
-```vue
+```html
 <template>
   <div>
     <span v-highlight="{
       mode?: string,
       color?: string,
       className?: string,
-      text?: string,
+      content?: string,
       keyword: string
     }">
+  </div>
+</tempalte>
+```
+
+If not use content property, the innerText of the directive wrapper will be as content.
+
+```html
+<template>
+  <div>
+    <span v-highlight="{ keyword: string }">innerText</span>
   </div>
 </tempalte>
 ```

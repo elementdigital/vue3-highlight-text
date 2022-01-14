@@ -4,6 +4,7 @@
 
 - first release!
 
-[1.0.3] - 2022-01-14
+[1.0.5] - 2022-01-14
 
 - fixed bug
+- add .d.ts file

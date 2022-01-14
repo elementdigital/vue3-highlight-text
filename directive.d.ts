@@ -1,3 +1,4 @@
-declare module 'vue3-highlight-text' {
-  export function directive(options = { mode: 'ig', color: '#EB9F13' }): (el: HTMLElement, binding: any) => void
-}
+declare var VUE3_HIGHLIGHT_TEXT:
+  (options = { mode: string, color: string }) => (el: HTMLElement, binding: any) => void
+
+export default VUE3_HIGHLIGHT_TEXT

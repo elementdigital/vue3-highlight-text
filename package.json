@@ -1,6 +1,6 @@
 {
   "name": "vue3-highlight-text",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "a vue3 directive of highlight text",
   "main": "directive.js",
   "keywords": [
