@@ -22,9 +22,7 @@ export default function(options = {}) {
       className: binding?.value?.className ?? ''
     }
     const regExp = new RegExp(escapeRegExp(option.keyword), option.mode)
-    const highlight = (keyword) => keyword
-      ? `<span${option.className ? `class="${option.className}"` : ''} style="color:${option.color}">${keyword}</span>`
-      : ''
+    const highlight = (keyword) => `<span${option.className ? `class="${option.className}"` : ''} style="color:${option.color}">${keyword}</span>`
 
     el.innerHTML = option.content.replace(regExp, highlight('$&'))
   }
