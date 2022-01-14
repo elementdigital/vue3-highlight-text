@@ -24,7 +24,9 @@ export default function(options = {}) {
     const regExp = new RegExp(escapeRegExp(option.keyword), option.mode)
     const highlight = (keyword) => `<span${option.className ? `class="${option.className}"` : ''} style="color:${option.color}">${keyword}</span>`
 
-    el.innerHTML = option.content.replace(regExp, highlight('$&'))
+    if (typeof option.content === 'string') {
+      el.innerHTML = option.content.replace(regExp, highlight('$&'))
+    }
   }
 
   return directive
