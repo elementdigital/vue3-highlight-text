@@ -9,7 +9,9 @@ Wraps selected text with 'span' element
 
 ```sh
 npm install --save https://github.com/elementdigital/vue3-highlight-text.git
+```
 or
+```sh
 yarn add --save https://github.com/elementdigital/vue3-highlight-text.git
 ```
 
