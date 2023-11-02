@@ -1,7 +1,7 @@
 {
   "name": "vue3-highlight-text",
   "version": "0.0.1",
-  "description": "a vue3 directive of highlight text",
+  "description": "vue3 text highlight directive",
   "main": "directive.js",
   "keywords": [
     "vue3",
@@ -9,7 +9,7 @@
     "directive",
     "highlight"
   ],
-  "author": "wiensss<wiens0101@gmail.com>",
+  "author": "administrator@elementdigital.com>",
   "license": "MIT",
   "dependencies": {}
 }

@@ -1,25 +1,31 @@
 # Vue3 Highlight Text
 
-Vue3 directive for highlighting text.  
+Vue3 directive for highlighting text  
 Forked from https://github.com/Wiensss/vue3-highlight-text
+
+Wraps selected text with 'span' element
 
 ## Installation
 
 ```sh
-npm install --save vue3-highlight-text
+npm install --save https://github.com/elementdigital/vue3-highlight-text.git
 or
-yarn add --save vue3-highlight-text
+yarn add --save https://github.com/elementdigital/vue3-highlight-text.git
 ```
 
 ## Quick Start
 
 ```js
-// vue project main file
+// vue project main file (main.js)
 import HighlightText from 'vue3-highlight-text'
 
 app.directive('highlight', HighlightText({
-  mode: string,
-  color: string
+  // CONFIGURE DEFAULT OPTIONS
+  // mode: 'string' // Modifies regex mode
+  // color: 'string' // Overrides default color when classBame not assigned,
+  // className: 'string' // Assigns a class attribute
+  // content: 'string' // Replaces the parent element innerHTML with (string)
+  // keyword: 'string' (required) // The text to be highlighted
 }))
 ```
 
@@ -40,7 +46,7 @@ app.directive('highlight', HighlightText({
 ```vue
 <template>
   <div>
-    <span v-highlight="{ className: string, keyword: string }">innerText</span>
+    <span v-highlight="{ className: 'string', keyword: 'string' }">innerText</span>
   </div>
 </tempalte>
 ```
