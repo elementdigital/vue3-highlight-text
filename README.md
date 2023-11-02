@@ -1,7 +1,7 @@
 # Vue3 Highlight Text
 
-Vue3 directive for highlighting text
-forked from https://github.com/Wiensss/vue3-highlight-text
+Vue3 directive for highlighting text.  
+Forked from https://github.com/Wiensss/vue3-highlight-text
 
 ## Installation
 
@@ -23,7 +23,7 @@ app.directive('highlight', HighlightText({
 }))
 ```
 
-```html
+```vue
 <template>
   <div>
     <span v-highlight="{
@@ -37,12 +37,10 @@ app.directive('highlight', HighlightText({
 </tempalte>
 ```
 
-If not use content property, the innerText of the directive wrapper will be as content.
-
-```html
+```vue
 <template>
   <div>
-    <span v-highlight="{ keyword: string }">innerText</span>
+    <span v-highlight="{ className: string, keyword: string }">innerText</span>
   </div>
 </tempalte>
 ```
