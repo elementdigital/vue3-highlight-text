@@ -1,6 +1,7 @@
 # Vue3 Highlight Text
 
-a vue3 directive of highlight text
+Vue3 directive for highlighting text
+forked from https://github.com/Wiensss/vue3-highlight-text
 
 ## Installation
 
@@ -12,13 +13,13 @@ yarn add --save vue3-highlight-text
 
 ## Quick Start
 
-```ts
+```js
 // vue project main file
 import HighlightText from 'vue3-highlight-text'
 
 app.directive('highlight', HighlightText({
-  mode?: string,
-  color?: string
+  mode: string,
+  color: string
 }))
 ```
 
@@ -26,10 +27,10 @@ app.directive('highlight', HighlightText({
 <template>
   <div>
     <span v-highlight="{
-      mode?: string,
-      color?: string,
-      className?: string,
-      content?: string,
+      mode: string,
+      color: string,
+      className: string,
+      content: string,
       keyword: string
     }">
   </div>
