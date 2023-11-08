@@ -22,12 +22,11 @@ yarn add --save https://github.com/elementdigital/vue3-highlight-text.git
 import HighlightText from 'vue3-highlight-text'
 
 app.directive('highlight', HighlightText({
-  // CONFIGURE DEFAULT OPTIONS
+  // OPTIONS
   // mode: 'string' // Modifies regex mode
   // color: 'string' // Overrides default color when classBame not assigned,
   // className: 'string' // Assigns a class attribute
   // content: 'string' // Replaces the parent element innerHTML with (string)
-  // keyword: 'string' (required) // The text to be highlighted
 }))
 ```
 
@@ -39,7 +38,7 @@ app.directive('highlight', HighlightText({
       color: string,
       className: string,
       content: string,
-      keyword: string
+      keyword: string (required)
     }">
   </div>
 </tempalte>
@@ -48,7 +47,7 @@ app.directive('highlight', HighlightText({
 ```vue
 <template>
   <div>
-    <span v-highlight="{ className: 'string', keyword: 'string' }">innerText</span>
+    <span v-highlight="{ className: 'string', keyword: 'string' }">InnerText</span>
   </div>
 </tempalte>
 ```
