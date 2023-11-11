@@ -10,23 +10,27 @@ function escapeRegExp(string) {
 export default function(options = {}) {
   const {
     mode = 'ig',
-    color = '#EB9F13'
+    color = '',
+    className = ''
   } = options
 
   const directive = (el, binding) => {
     const option = {
+      keyword: binding?.value?.keyword ?? '',
       mode: binding?.value?.mode ?? mode,
       color: binding?.value?.color ?? color,
-      content: binding?.value?.content ?? el?.innerText ?? '',
-      keyword: binding?.value?.keyword ?? '',
-      className: binding?.value?.className ?? ''
+      className: binding?.value?.className ?? className,
+      content: binding?.value?.content ?? el?.innerText ?? ''
     }
-    const regExp = new RegExp(escapeRegExp(option.keyword), option.mode)
-    // const highlight = (keyword) => `<span ${option.className ? ` class="${option.className}"` : ''} style="color:${option.color}">${keyword}</span>`
-    const highlight = (keyword) => `<span ${option.className ? ` class="${option.className}"` : `style=color:${option.color}`}>${keyword}</span>`
+
+    const keywordRegExp = new RegExp(escapeRegExp(option.keyword), option.mode)
+
+    const highlight = (keyword) => `<span 
+    ${option.className ? ` class="${option.className}"` : ''} 
+    ${option.color ? ` style="color:${option.color}"` : ''}>${keyword}</span>`
 
     if (typeof option.content === 'string') {
-      el.innerHTML = option.content.replace(regExp, highlight('$&'))
+      el.innerHTML = option.content.replace(keywordRegExp, highlight('$&'))
     }
   }
 

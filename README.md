@@ -26,7 +26,6 @@ app.directive('highlight', HighlightText({
   // mode: 'string' // Modifies regex mode
   // color: 'string' // Overrides default color when classBame not assigned,
   // className: 'string' // Assigns a class attribute
-  // content: 'string' // Replaces the parent element innerHTML with (string)
 }))
 ```
 
@@ -37,7 +36,6 @@ app.directive('highlight', HighlightText({
       mode: string,
       color: string,
       className: string,
-      content: string,
       keyword: string (required)
     }">
   </div>
