@@ -8,10 +8,9 @@ Wraps selected text with 'span' element
 ## Installation
 
 ```sh
-// npm
 npm install --save https://github.com/elementdigital/vue3-highlight-text.git
-
-// yarn
+```
+```sh
 yarn add --save https://github.com/elementdigital/vue3-highlight-text.git
 ```
 
@@ -45,7 +44,7 @@ app.directive('highlight', HighlightText({
 ```vue
 <template>
   <div>
-    <span v-highlight="{ className: 'string', keyword: 'string' }">Text Here</span>
+    <span v-highlight="{ className: 'string', keyword: 'string' }">innerText</span>
   </div>
 </tempalte>
 ```

@@ -15,12 +15,12 @@ export default function(options = {}) {
   } = options
 
   const directive = (el, binding) => {
+    const content = el.innerText
     const option = {
-      keyword: binding?.value?.keyword ?? '',
-      mode: binding?.value?.mode ?? mode,
-      color: binding?.value?.color ?? color,
-      className: binding?.value?.className ?? className,
-      content: binding?.value?.content ?? el?.innerText ?? ''
+      keyword: binding.value.keyword ?? keyword,
+      mode: binding.value.mode ?? mode,
+      color: binding.value.color ?? color,
+      className: binding.value.className ?? className,
     }
 
     const keywordRegExp = new RegExp(escapeRegExp(option.keyword), option.mode)
@@ -29,8 +29,8 @@ export default function(options = {}) {
     ${option.className ? ` class="${option.className}"` : ''} 
     ${option.color ? ` style="color:${option.color}"` : ''}>${keyword}</span>`
 
-    if (typeof option.content === 'string') {
-      el.innerHTML = option.content.replace(keywordRegExp, highlight('$&'))
+    if (typeof content === 'string') {
+      el.innerHTML = content.replace(keywordRegExp, highlight('$&'))
     }
   }
 
