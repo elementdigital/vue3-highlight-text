@@ -9,21 +9,22 @@ function escapeRegExp(string) {
 
 export default function(options = {}) {
   const {
-    mode = 'ig',
+    // mode = 'ig',
     color = '',
     className = ''
   } = options
 
   const directive = (el, binding) => {
+
     const content = el.innerText
+
     const option = {
       keyword: binding.value.keyword ?? keyword,
-      mode: binding.value.mode ?? mode,
       color: binding.value.color ?? color,
       className: binding.value.className ?? className,
     }
 
-    const keywordRegExp = new RegExp(escapeRegExp(option.keyword), option.mode)
+    const keywordRegExp = new RegExp(escapeRegExp(option.keyword), 'ig')
 
     const highlight = (keyword) => `<span 
     ${option.className ? ` class="${option.className}"` : ''} 
